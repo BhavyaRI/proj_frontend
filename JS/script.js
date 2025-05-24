@@ -5,7 +5,7 @@ function fetchAndDisplaySlots(venue, datevalue) {
   const fdate = `${parts[2]}/${parts[1]}/${parts[0]}`;
 
   //This URL for fetching slots
-  const url = `http://localhost:3000/bookings?venue=${encodeURIComponent(
+  const url = `http://proj-backend-seven.vercel.app/bookings?venue=${encodeURIComponent(
     venue
   )}&date=${encodeURIComponent(fdate)}`;
 
@@ -80,7 +80,7 @@ function showBookingForm(
   originalRawDate
 ) {
   fetch(
-    `http://localhost:3000/bookings/venue/${encodeURIComponent(selectedVenue)}`
+    `http://proj-backend-seven.vercel.app/bookings/venue/${encodeURIComponent(selectedVenue)}`
   )
     .then((resp) => {
       if (!resp.ok) throw new Error("Failed to fetch venue details");
@@ -170,7 +170,7 @@ document.addEventListener("submit", (e) => {
       time,
     };
     //POST request to book the slot
-    fetch("http://localhost:3000/bookings", {
+    fetch("http://proj-backend-seven.vercel.app/bookings", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
