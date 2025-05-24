@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportomic</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div>
+        <div class="title">
+            <h1>Sport Club Booking</h1>
+            <h3>Book your venue for sports activities</h3>
+        </div>
+        <div class="content">
+            <form id="booking-form" class="detail">
+                <div class="cnt">
+                    <h2>Select Venue & Date</h2>
+                </div>
+                <div class="venue">
+                    <label for="venue">Venue</label>
+                    <br>
+                    <select id="venue" name="venue" class="venue-select" required>
+                        <option value="Stadium Alpha">Stadium Alpha</option>
+                        <option value="Central Sports Complex">Central Sports Complex</option>
+                        <option value="Skyline Arena">Skyline Arena</option>
+                        <option value="Riverside Club">Riverside Club</option>
+                        <option value="Greenfield Grounds">Greenfield Grounds</option>
+                    </select>
+                </div>
+
+                <div class="date">
+                    <label for="venue-date">Date</label>
+                    <br>
+                    <input type="date" id="venue-date" name="date" class="date-select" required>
+                </div>
+
+                <div class="btn">
+                    <button type="submit" class="btn-book">Search</button>
+                </div>
+            </form>
+            <div class="book">
+                <h2>Available slots</h2>
+
+                <div class="confirm">
+
+                </div>
+                <div class="slots">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
