@@ -177,14 +177,16 @@ document.addEventListener("submit", (e) => {
       },
       body: JSON.stringify(bookingData),
     })
-      .then((resp) => {
-        if (!resp.ok) {
-          return resp.json().then((err) => {
-            throw new Error(err.message || "Failed to book slot");
-          });
-        }
-        return resp.json();
-      })
+      .then(async resp => {
+  const text = await resp.text();
+  try {
+    const data = JSON.parse(text);
+    if (!resp.ok) throw new Error(data.message || resp.statusText);
+    return data;
+  } catch {
+    throw new Error(`Invalid JSON from server:\n${text.slice(0,200)}`);
+  }
+})
       .then((response) => {
         console.log("Booking response:", response);
         function generateBookingId() {
